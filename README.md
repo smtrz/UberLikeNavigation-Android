@@ -6,6 +6,8 @@ This is an open source Uber Like Navigation for easy navigation .
 
 <h2>Step #1 : Adding JitPack repository</h2>
 Add it in your root build.gradle at the end of repositories:
+
+
 ```
 allprojects {
 	repositories {
@@ -13,14 +15,17 @@ allprojects {
 		maven { url 'https://jitpack.io' }
 		}
 	}
-	```
-<h2>Step #2: Adding Dependecy</h2>
+```
+Step #1 : Adding Dependecy
+-------
+
 Add the dependency
 ```
 dependencies {
-	        compile 'com.github.smtrz:UberLikeNavigation-Android:0.1.1'
-	}
-	```
+compile 'com.github.smtrz:UberLikeNavigation-Android:0.1.1'
+
+}
+```
 Follow the steps and then you would be able to get the benefit of using this library .
 
 
