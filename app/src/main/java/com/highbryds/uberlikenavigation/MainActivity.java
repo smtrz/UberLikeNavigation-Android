@@ -16,22 +16,24 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;/*
 import com.highbryds.navigation_uber.Interfaces.NaviInterfaces;
 import com.highbryds.navigation_uber.NavigationUtils;*/
+import com.highbryds.navigation_uber.Interfaces.NaviInterfaces;
+import com.highbryds.navigation_uber.NavigationUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback  /*,  NaviInterfaces*/ {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, NaviInterfaces {
     private GoogleMap mMap;
     private Button stop;
- //   NavigationUtils nu;
+    NavigationUtils nu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-       // nu = new NavigationUtils();
-      //  nu.delay = 3000;
-      //  nu.MapZoom = 17f;
+        nu = new NavigationUtils();
+          nu.delay = 3000;
+         nu.MapZoom = 15.5f;
 
         stop = findViewById(R.id.stop);
         SupportMapFragment SMF = (SupportMapFragment) getSupportFragmentManager()
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //   nu.StopAnimation();
+                //   nu.StopAnimation();
             }
         });
     }
@@ -52,18 +54,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
             @Override
             public void onMapLoaded() {
-              //  nu.CreatePath(mMap, MainActivity.this);
+                  nu.CreatePath(mMap, MainActivity.this);
 
 
-               /* LatLngBounds.Builder builder = new LatLngBounds.Builder();
+                LatLngBounds.Builder builder = new LatLngBounds.Builder();
                 for (LatLng latLng : MainActivity.this.Get_LatLng()) {
                     builder.include(latLng);
                 }
                 LatLngBounds bounds = builder.build();
                 CameraUpdate mCameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, 2);
-                mMap.animateCamera(mCameraUpdate);*/
+                mMap.animateCamera(mCameraUpdate);
 
-               // nu.StartAnimation(MainActivity.this.Get_LatLng(), mMap);
+                nu.StartAnimation(MainActivity.this.Get_LatLng(), mMap);
 
 
             }
@@ -72,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-   /* @Override
+    @Override
     public List<LatLng> Get_LatLng() {
         ArrayList<LatLng> newlist = new ArrayList<>();
         newlist.add(new LatLng(24.925911, 67.141012));
@@ -85,5 +87,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         return newlist;
-    }*/
+    }
+
+
 }

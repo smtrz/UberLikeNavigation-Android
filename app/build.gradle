@@ -36,5 +36,8 @@ dependencies {
     implementation "com.google.android.gms:play-services-maps:${google_play_services_version}"
     //#####################################################################
     //implementation project(':navigation-uber')
+    implementation 'com.github.smtrz:UberLikeNavigation-Android:0.1.0'
+
+
 }
 
