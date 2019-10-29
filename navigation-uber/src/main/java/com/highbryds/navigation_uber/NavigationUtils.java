@@ -44,6 +44,8 @@ public class NavigationUtils {
     Marker marker;
     public  long delay = 3000;
     public  float MapZoom = 15.5f;
+
+    public int drawable=R.drawable.ic_car;
 // the way you can get the list of latitude and longitudes.
 
 
@@ -107,10 +109,17 @@ public class NavigationUtils {
         marker = googleMap.addMarker(new MarkerOptions().position(ni.Get_LatLng().get(0))
                 .flat(true)
 
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_car)));
+                .icon(BitmapDescriptorFactory.fromResource(drawable)));
 
 
     }
+
+    public void setMarkerIcon(int drawable)
+    {
+        marker.setIcon(BitmapDescriptorFactory.fromResource(drawable));
+
+    }
+
 
     //Start Animation
     public void StartAnimation(final List<LatLng> polyLineList, final GoogleMap googleMap) {

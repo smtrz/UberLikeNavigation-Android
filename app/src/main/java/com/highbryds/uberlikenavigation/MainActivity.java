@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private Button stop;
     NavigationUtils nu;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         nu = new NavigationUtils();
           nu.delay = 3000;
          nu.MapZoom = 15.5f;
+
 
         stop = findViewById(R.id.stop);
         SupportMapFragment SMF = (SupportMapFragment) getSupportFragmentManager()
